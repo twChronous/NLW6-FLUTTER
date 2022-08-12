@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:payflow/shared/widgets/auth/auth_controller.dart';
+import 'package:payflow/shared/auth/auth_controller.dart';
 
 class LoginController {
   final authController = AuthController();
