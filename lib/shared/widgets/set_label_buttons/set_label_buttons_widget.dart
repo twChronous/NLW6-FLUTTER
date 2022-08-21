@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
+import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 import 'package:payflow/shared/widgets/divider_vertical/divider_vertical_widget.dart';
 import 'package:payflow/shared/widgets/label_button/label_button.dart';
@@ -23,8 +24,9 @@ class SetLabelButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
         height: 56,
+        color: AppColors.shape,
         child: Row(
         children: [
           Expanded(
