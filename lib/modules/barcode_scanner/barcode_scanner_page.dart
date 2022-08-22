@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:payflow/modules/barcode_scanner/barcode_scanner_controller.dart';
 import 'package:payflow/modules/barcode_scanner/barcode_scanner_status.dart';
@@ -23,7 +21,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
     controller.getAvailableCameras();
     controller.statusNotifier.addListener(() {
       if(controller.status.hasBarcode) {
-        Navigator.pushReplacementNamed(context, "/insert_boleto");
+        Navigator.pushReplacementNamed(context, "/insert_boleto", arguments: controller.status.barcode);
       }
     });
     super.initState();
