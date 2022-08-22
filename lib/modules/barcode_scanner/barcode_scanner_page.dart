@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:payflow/modules/barcode_scanner/barcode_scanner_controller.dart';
 import 'package:payflow/modules/barcode_scanner/barcode_scanner_status.dart';
@@ -86,7 +88,9 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
               bottomNavigationBar: SetLabelButtons(
                 primaryLabel: "Inserir Codigo do Boleto",
                 secondaryLabel: "Adicionar da galeria",
-                primaryOnPressed: () {},
+                primaryOnPressed: () {
+                  Navigator.pushReplacementNamed(context, "/insert_boleto");
+                },
                 secondaryOnPressed: () {},
               ),
             ),
@@ -100,7 +104,7 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                     primaryLabel: "Escanear Novamente",
                     secondaryLabel: "Digitar código",
                     primaryOnPressed: () {
-                      controller.getAvailableCameras();
+                      controller.scanWithCamera();
                     },
                     secondaryOnPressed: () {}
                   );
